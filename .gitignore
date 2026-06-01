@@ -14,6 +14,9 @@ data/off_foods.jsonl
 # intermediate LoRA checkpoints (keep only the final adapters.safetensors)
 adapters/0000*_adapters.safetensors
 
+# the cross-encoder (86 MB) lives on HF Hub — code auto-downloads it (foodllm/hub.py)
+models/food-reranker/
+
 # OS
 .DS_Store
 .env

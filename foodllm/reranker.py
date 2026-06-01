@@ -25,7 +25,11 @@ def _get_ce():
     global _ce
     if _ce is None:
         from sentence_transformers import CrossEncoder
-        _ce = CrossEncoder(_FINETUNED if os.path.isdir(_FINETUNED) else _BASE_MODEL)
+        from . import hub
+        try:
+            _ce = CrossEncoder(hub.get_reranker_dir())   # local or auto-download from HF
+        except Exception:
+            _ce = CrossEncoder(_BASE_MODEL)              # fall back to the base
     return _ce
 
 

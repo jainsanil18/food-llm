@@ -90,13 +90,19 @@ CUDA tooling (unsloth/bitsandbytes) doesn't run on Mac — this uses **MLX**.
 ./.venv/bin/python -m scripts.eval
 ```
 
-## Included models
+## Models
 
-| Model | Size | What |
-|-------|------|------|
-| `adapters/adapters.safetensors` | ~12 MB | LoRA adapter for the 0.5B extractor (base downloads from HF) |
-| `models/food-static/` | ~30 MB | Fine-tuned static embedder matrix |
-| `models/food-reranker/` | ~87 MB | Fine-tuned cross-encoder reranker |
+Weights are on the Hugging Face Hub: **[sanil08/food-llm](https://huggingface.co/sanil08/food-llm)**.
+
+| Model | Size | Ships where |
+|-------|------|-------------|
+| `adapters/adapters.safetensors` | ~12 MB | in this repo (LoRA for the 0.5B extractor; base downloads from HF) |
+| `models/food-static/` | ~30 MB | in this repo (fine-tuned static embedder) |
+| cross-encoder reranker | ~87 MB | **HF Hub** — auto-downloaded on first use (`foodllm/hub.py`) |
+
+The 86 MB reranker is kept out of git to keep clones fast; `foodllm/reranker.py`
+pulls it from HF the first time it's needed (and caches it). To re-create any of
+them, see *Training* above.
 
 ## Footprint
 
