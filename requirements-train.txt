@@ -1,0 +1,4 @@
+# Local training on Apple Silicon (M-series). CUDA tools (unsloth, bitsandbytes)
+# do NOT work on Mac — MLX is Apple's native framework and is the right choice.
+# Install into the venv:  ./.venv/bin/pip install -r requirements-train.txt
+mlx-lm>=0.21.0

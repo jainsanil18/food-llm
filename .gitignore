@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# logs
+*.log
+
+# large / regenerable data (USDA raw CSVs — re-download via README)
+data/usda/
+data/off_foods.jsonl
+
+# intermediate LoRA checkpoints (keep only the final adapters.safetensors)
+adapters/0000*_adapters.safetensors
+
+# OS
+.DS_Store
+.env

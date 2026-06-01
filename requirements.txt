@@ -1,0 +1,3 @@
+# Only one direct dependency — the Anthropic SDK (brings Pydantic v2 with it).
+# Open Food Facts is fetched via stdlib urllib, so no `requests` needed.
+anthropic>=0.69.0
